@@ -48,6 +48,7 @@ const processInput = input => {
     b = "";
     populateDisplay("");
   } else if (/[0-9\.]/.test(input)) {
+    if (input == "." && stack.getValue().includes(".")) return;
     stack.push(input);
     populateDisplay(stack.getValue());
   } else if (/[+-/*]/.test(input)) {
